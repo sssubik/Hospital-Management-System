@@ -162,7 +162,6 @@ public class ViewAppointment extends javax.swing.JPanel {
         panel = new javax.swing.JPanel();
         time_txt3 = new javax.swing.JLabel();
         date_txt3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         Error = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableAppointment = new javax.swing.JTable();
@@ -175,6 +174,9 @@ public class ViewAppointment extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         TextPid = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -195,15 +197,6 @@ public class ViewAppointment extends javax.swing.JPanel {
         panel.add(date_txt3);
         date_txt3.setBounds(900, 20, 80, 20);
 
-        jButton1.setText("<<Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        panel.add(jButton1);
-        jButton1.setBounds(30, 10, 71, 23);
-
         Error.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         Error.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -212,7 +205,7 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         });
         panel.add(Error);
-        Error.setBounds(330, 550, 530, 40);
+        Error.setBounds(370, 540, 380, 30);
 
         TableAppointment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -233,9 +226,15 @@ public class ViewAppointment extends javax.swing.JPanel {
         jScrollPane1.setViewportView(TableAppointment);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 100, 920, 400);
+        jScrollPane1.setBounds(20, 110, 770, 390);
+
+        TextSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextSearchActionPerformed(evt);
+            }
+        });
         panel.add(TextSearch);
-        TextSearch.setBounds(110, 50, 310, 30);
+        TextSearch.setBounds(90, 70, 310, 30);
 
         ButtonSearch.setText("Search");
         ButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -244,7 +243,7 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         });
         panel.add(ButtonSearch);
-        ButtonSearch.setBounds(490, 50, 130, 30);
+        ButtonSearch.setBounds(410, 70, 110, 30);
         panel.add(TextId);
         TextId.setBounds(180, 510, 100, 30);
 
@@ -252,7 +251,7 @@ public class ViewAppointment extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText(" Patient ID:");
         panel.add(jLabel2);
-        jLabel2.setBounds(10, 540, 170, 50);
+        jLabel2.setBounds(30, 550, 130, 30);
 
         jButton2.setText("CheckIn");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -261,7 +260,7 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         });
         panel.add(jButton2);
-        jButton2.setBounds(350, 510, 100, 40);
+        jButton2.setBounds(370, 510, 80, 30);
 
         jButton3.setText("Delete");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -270,7 +269,7 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         });
         panel.add(jButton3);
-        jButton3.setBounds(510, 510, 100, 40);
+        jButton3.setBounds(520, 510, 80, 30);
 
         jButton4.setText("Patient");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -279,15 +278,38 @@ public class ViewAppointment extends javax.swing.JPanel {
             }
         });
         panel.add(jButton4);
-        jButton4.setBounds(670, 510, 110, 40);
+        jButton4.setBounds(660, 510, 90, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Appointment ID:");
         panel.add(jLabel4);
-        jLabel4.setBounds(20, 500, 170, 50);
+        jLabel4.setBounds(30, 510, 140, 30);
         panel.add(TextPid);
         TextPid.setBounds(180, 550, 100, 30);
+
+        jButton7.setBackground(new java.awt.Color(204, 204, 204));
+        jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton7);
+        jButton7.setBounds(20, 10, 80, 27);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Appointment Record");
+        panel.add(jLabel5);
+        jLabel5.setBounds(400, 0, 210, 40);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Name:");
+        panel.add(jLabel3);
+        jLabel3.setBounds(30, 70, 60, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InvoiceBackground.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -296,15 +318,6 @@ public class ViewAppointment extends javax.swing.JPanel {
         add(panel);
         panel.setBounds(0, 0, 980, 600);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1, 2));
-        panel.add(new jpanel5());
-        panel.updateUI();
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSearchActionPerformed
         // TODO add your handling code here:
@@ -399,6 +412,20 @@ public class ViewAppointment extends javax.swing.JPanel {
 
     }//GEN-LAST:event_ErrorMouseClicked
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+       panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel5());
+        panel.updateUI();
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void TextSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextSearchActionPerformed
+
     public int getTableClick() {
         return TableClick;
     }
@@ -412,13 +439,15 @@ public class ViewAppointment extends javax.swing.JPanel {
     private javax.swing.JTextField TextPid;
     private javax.swing.JTextField TextSearch;
     private javax.swing.JLabel date_txt3;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel;
     private javax.swing.JLabel time_txt3;

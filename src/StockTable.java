@@ -127,6 +127,7 @@ public void CurrentDate(){
         TableStock = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -166,7 +167,7 @@ public void CurrentDate(){
         jScrollPane1.setViewportView(TableStock);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 70, 860, 370);
+        jScrollPane1.setBounds(100, 120, 790, 300);
 
         jButton1.setText("<<Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +186,12 @@ public void CurrentDate(){
         });
         panel.add(jButton2);
         jButton2.setBounds(30, 450, 130, 30);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Drug Stock Record");
+        panel.add(jLabel2);
+        jLabel2.setBounds(400, 0, 160, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -228,6 +235,7 @@ public void CurrentDate(){
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel;
     private javax.swing.JLabel time_txt3;

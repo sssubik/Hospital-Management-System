@@ -168,6 +168,7 @@ public class ViewDoctor extends javax.swing.JPanel {
         TableDoctor = new javax.swing.JTable();
         TextSearch = new javax.swing.JTextField();
         ButtonSearch = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -229,9 +230,9 @@ public class ViewDoctor extends javax.swing.JPanel {
         jScrollPane1.setViewportView(TableDoctor);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(70, 100, 840, 370);
+        jScrollPane1.setBounds(90, 120, 810, 310);
         panel.add(TextSearch);
-        TextSearch.setBounds(120, 10, 310, 30);
+        TextSearch.setBounds(80, 60, 310, 30);
 
         ButtonSearch.setText("Search");
         ButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -240,8 +241,15 @@ public class ViewDoctor extends javax.swing.JPanel {
             }
         });
         panel.add(ButtonSearch);
-        ButtonSearch.setBounds(460, 10, 130, 30);
+        ButtonSearch.setBounds(410, 60, 130, 30);
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Doctor List");
+        panel.add(jLabel2);
+        jLabel2.setBounds(440, 0, 100, 40);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
         jLabel1.setBounds(0, 0, 980, 600);
@@ -315,6 +323,7 @@ public class ViewDoctor extends javax.swing.JPanel {
     private javax.swing.JLabel date_txt3;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel;
     private javax.swing.JLabel time_txt3;

@@ -219,7 +219,7 @@ public class amedicine_jpanel extends javax.swing.JPanel {
             }
         });
         panel.add(jButton2);
-        jButton2.setBounds(640, 370, 90, 40);
+        jButton2.setBounds(800, 370, 90, 40);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,7 +234,7 @@ public class amedicine_jpanel extends javax.swing.JPanel {
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(130, 430, 560, 50);
+        Error.setBounds(610, 370, 180, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -288,7 +288,7 @@ public class amedicine_jpanel extends javax.swing.JPanel {
         if (!valid.isStringInt(TextName.getText())) {
             Error.setText("Name cant have symbols");
         } else if (valid.isEmpty(Edate)) {
-            Error.setText("Date must be Selected!!!");
+            Error.setText("Date must be selected");
         } else if (!valid.isInteger(TextCost.getText())) {
             Error.setText("Cost must be an Integer");
         } else if (!valid.isInteger(TextStock.getText())) {
@@ -298,7 +298,25 @@ public class amedicine_jpanel extends javax.swing.JPanel {
             DrugService Ds = new DrugService();
             Ds.insert(this);
             Error.setText("");
+                    panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        ExpiryAlert Ea = new ExpiryAlert();
+        int i = Ea.Alert();
+        StockAlert Sa = new StockAlert();
+        int s = Sa.Alert();
+        jpanel4 j = new jpanel4();
+        if (i > 0) {
+            j.setLabel(i);
         }
+        if (s > 0) {
+            j.setStock(s);
+        }
+
+        panel.add(j);
+        panel.updateUI();
+       
+        }
+        
        
     }//GEN-LAST:event_jButton2ActionPerformed
 

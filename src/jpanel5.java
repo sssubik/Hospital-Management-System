@@ -141,11 +141,10 @@ public class jpanel5 extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         DateAppointment = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
-        Hour = new javax.swing.JComboBox<>();
-        Minute = new javax.swing.JComboBox<>();
+        Hour = new javax.swing.JComboBox<String>();
+        Minute = new javax.swing.JComboBox<String>();
         AP = new javax.swing.JComboBox();
         jButton2 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TextPName = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
@@ -192,11 +191,11 @@ public class jpanel5 extends javax.swing.JPanel {
         panel.add(jLabel6);
         jLabel6.setBounds(390, 10, 150, 30);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Patient Name: ");
         panel.add(jLabel2);
-        jLabel2.setBounds(90, 100, 200, 40);
+        jLabel2.setBounds(100, 120, 120, 30);
         panel.add(jSeparator1);
         jSeparator1.setBounds(0, 100, 980, 10);
 
@@ -207,17 +206,17 @@ public class jpanel5 extends javax.swing.JPanel {
             }
         });
         panel.add(jButton1);
-        jButton1.setBounds(100, 180, 170, 40);
+        jButton1.setBounds(80, 60, 150, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Appointment Time: ");
         panel.add(jLabel3);
         jLabel3.setBounds(100, 350, 170, 30);
         panel.add(TextDid);
-        TextDid.setBounds(270, 230, 220, 30);
+        TextDid.setBounds(230, 230, 220, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Doctor ID:");
         panel.add(jLabel4);
@@ -225,15 +224,15 @@ public class jpanel5 extends javax.swing.JPanel {
 
         DateAppointment.setDateFormatString("yyyy-MM-dd");
         panel.add(DateAppointment);
-        DateAppointment.setBounds(270, 310, 190, 30);
+        DateAppointment.setBounds(230, 310, 220, 30);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Appointment Date: ");
         panel.add(jLabel5);
         jLabel5.setBounds(100, 310, 170, 30);
 
-        Hour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-HH-", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        Hour.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-HH-", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         Hour.setSelectedIndex(00);
         Hour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,15 +240,15 @@ public class jpanel5 extends javax.swing.JPanel {
             }
         });
         panel.add(Hour);
-        Hour.setBounds(270, 350, 70, 30);
+        Hour.setBounds(230, 350, 70, 30);
 
-        Minute.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-MM-", "00", "01 ", "02", "03", "04", "05", "06", "07", "08 ", "09 ", "10 ", "11 ", "12 ", "13 ", "14 ", "15 ", "16 ", "17 ", "18 ", "19 ", "20 ", "21 ", "22 ", "23 ", "24 ", "25 ", "26 ", "27 ", "28 ", "29 ", "30 ", "31 ", "32 ", "33 ", "34 ", "35 ", "36 ", "37 ", "38 ", "39 ", "40 ", "41 ", "42 ", "43 ", "44 ", "45 ", "46 ", "47 ", "48 ", "49 ", "50 ", "51 ", "52 ", "53 ", "54 ", "55 ", "56 ", "57 ", "58 ", "59 " }));
+        Minute.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-MM-", "00", "01 ", "02", "03", "04", "05", "06", "07", "08 ", "09 ", "10 ", "11 ", "12 ", "13 ", "14 ", "15 ", "16 ", "17 ", "18 ", "19 ", "20 ", "21 ", "22 ", "23 ", "24 ", "25 ", "26 ", "27 ", "28 ", "29 ", "30 ", "31 ", "32 ", "33 ", "34 ", "35 ", "36 ", "37 ", "38 ", "39 ", "40 ", "41 ", "42 ", "43 ", "44 ", "45 ", "46 ", "47 ", "48 ", "49 ", "50 ", "51 ", "52 ", "53 ", "54 ", "55 ", "56 ", "57 ", "58 ", "59 " }));
         panel.add(Minute);
-        Minute.setBounds(360, 350, 80, 30);
+        Minute.setBounds(320, 350, 80, 30);
 
         AP.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AM", "PM" }));
         panel.add(AP);
-        AP.setBounds(460, 350, 80, 30);
+        AP.setBounds(410, 350, 80, 30);
 
         jButton2.setText("Make Appointment");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -258,31 +257,25 @@ public class jpanel5 extends javax.swing.JPanel {
             }
         });
         panel.add(jButton2);
-        jButton2.setBounds(100, 390, 230, 50);
+        jButton2.setBounds(350, 400, 140, 30);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Patient Details");
-        panel.add(jLabel7);
-        jLabel7.setBounds(90, 60, 200, 40);
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Appointment Details");
         panel.add(jLabel8);
-        jLabel8.setBounds(90, 140, 200, 40);
+        jLabel8.setBounds(100, 180, 200, 40);
         panel.add(TextPName);
-        TextPName.setBounds(280, 110, 400, 30);
+        TextPName.setBounds(210, 120, 400, 30);
         panel.add(jSeparator3);
         jSeparator3.setBounds(0, 170, 950, 10);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Doctor Name:");
         panel.add(jLabel9);
-        jLabel9.setBounds(100, 270, 90, 30);
+        jLabel9.setBounds(100, 270, 120, 30);
         panel.add(TextName);
-        TextName.setBounds(270, 270, 280, 30);
+        TextName.setBounds(230, 270, 220, 30);
 
         jButton3.setText("View Appointment");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -291,16 +284,23 @@ public class jpanel5 extends javax.swing.JPanel {
             }
         });
         panel.add(jButton3);
-        jButton3.setBounds(380, 390, 220, 50);
+        jButton3.setBounds(750, 390, 140, 30);
 
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(160, 440, 480, 40);
+        Error.setBounds(100, 400, 240, 30);
 
         TableDoctor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TableDoctor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null}
@@ -328,11 +328,11 @@ public class jpanel5 extends javax.swing.JPanel {
         jScrollPane1.setViewportView(TableDoctor);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(610, 180, 360, 280);
+        jScrollPane1.setBounds(510, 180, 380, 200);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
-        jLabel1.setBounds(0, 0, 980, 600);
+        jLabel1.setBounds(-10, 0, 980, 600);
 
         add(panel);
         panel.setBounds(0, 0, 980, 600);
@@ -368,19 +368,19 @@ public class jpanel5 extends javax.swing.JPanel {
         
         String date = ((JTextField) DateAppointment.getDateEditor().getUiComponent()).getText();
         if (!valid.isString(TextPName.getText())) {
-            Error.setText("Patient Name must Be String!!");
+            Error.setText("Patient Name must Be String");
         } else if (!valid.isInteger(TextDid.getText())) {
-            Error.setText("Did Must Be Integer!!");
+            Error.setText("Did Must Be Integer");
         } else if (!valid.isString(TextName.getText())) {
-            Error.setText("Doctor Name Must Be String!!");
+            Error.setText("Doctor Name Must Be String");
         } else if (valid.isEmpty(date)) {
-            Error.setText("Date Empty!!!");
+            Error.setText("Date Empty");
         }
         else if (!valid.isInteger(hour)) {
-            Error.setText("Hour Must Be Integer!!");
+            Error.setText("Hour Must Be Integer");
         }
         else if (!valid.isInteger(min)) {
-            Error.setText("Minute Must Be Integer!!");
+            Error.setText("Minute Must Be Integer");
         }
         else{
              Error.setText("");
@@ -458,7 +458,6 @@ public class jpanel5 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;

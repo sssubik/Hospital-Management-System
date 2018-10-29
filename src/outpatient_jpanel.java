@@ -260,7 +260,7 @@ public void CurrentDate(){
             }
         });
         panel.add(jButton1);
-        jButton1.setBounds(820, 370, 80, 30);
+        jButton1.setBounds(810, 390, 80, 30);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -331,7 +331,7 @@ public void CurrentDate(){
             }
         });
         panel.add(TextDiagnosis);
-        TextDiagnosis.setBounds(210, 350, 580, 100);
+        TextDiagnosis.setBounds(210, 350, 580, 70);
 
         TextDName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         TextDName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Doctor" }));
@@ -374,12 +374,12 @@ public void CurrentDate(){
             }
         });
         panel.add(jButton3);
-        jButton3.setBounds(50, 490, 160, 50);
+        jButton3.setBounds(810, 350, 80, 30);
 
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(80, 430, 600, 40);
+        Error.setBounds(280, 50, 600, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -461,7 +461,7 @@ public void CurrentDate(){
                 Error.setText("");
 
             } else {
-                Error.setText("Sorry Patient Not Found !!!!");
+                Error.setText("Sorry Patient Not Found");
 
                 TextName.setText("");
 

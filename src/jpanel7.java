@@ -113,12 +113,14 @@ public void CurrentDate(){
         date_txt6 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         main = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(null);
 
@@ -155,49 +157,50 @@ public void CurrentDate(){
         panel.add(jLabel6);
         jLabel6.setBounds(450, 10, 110, 30);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText(">> Out Patient Record:");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/101ic.jpg"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
-        panel.add(jLabel2);
-        jLabel2.setBounds(70, 240, 260, 50);
+        panel.add(jButton2);
+        jButton2.setBounds(100, 150, 230, 100);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText(">> Doctor Appointment Records");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/105ic.jpg"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
-        panel.add(jLabel3);
-        jLabel3.setBounds(70, 100, 260, 30);
+        panel.add(jButton3);
+        jButton3.setBounds(650, 150, 230, 100);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText(">> Drug Sales Record:");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/102ic.jpg"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
             }
         });
-        panel.add(jLabel4);
-        jLabel4.setBounds(70, 140, 260, 50);
+        panel.add(jButton4);
+        jButton4.setBounds(210, 290, 230, 100);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText(">> In Patient Record:");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/104ic.jpg"))); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
             }
         });
-        panel.add(jLabel7);
-        jLabel7.setBounds(70, 190, 260, 50);
+        panel.add(jButton6);
+        jButton6.setBounds(380, 150, 230, 100);
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/103ic.jpg"))); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton8);
+        jButton8.setBounds(550, 290, 230, 100);
 
         main.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(main);
@@ -211,6 +214,15 @@ public void CurrentDate(){
         jLabel5.setText("Invoice");
         add(jLabel5);
         jLabel5.setBounds(450, 10, 80, 30);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hmic1.jpg"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(100, 150, 230, 100);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -222,52 +234,61 @@ public void CurrentDate(){
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       panel.removeAll();
+        //removing panel
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //removing panel
+        panel.removeAll();
         panel.setLayout(new GridLayout(1,2));
         panel.add(new RecordDoctorAppointment());
         panel.updateUI();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         panel.removeAll();
         panel.setLayout(new GridLayout(1,2));
-        
+        panel.add(new OutPatientRecord());
+        panel.updateUI();      // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1,2));
+        panel.add(new TopDisease());
+        panel.updateUI();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1,2));
+        panel.add(new InPatientRecord());
+        panel.updateUI();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+      panel.removeAll();
+        panel.setLayout(new GridLayout(1,2));
         panel.add(new RecordDrugSales());
-        panel.updateUI();
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        // TODO add your handling code here:
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1,2));
-        panel.add(new InPatientRecord());
-        panel.updateUI();
-        
-    }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-         panel.removeAll();
-        panel.setLayout(new GridLayout(1,2));
-        panel.add(new InPatientRecord());
-        panel.updateUI();
-
-    }//GEN-LAST:event_jLabel2MouseClicked
+        panel.updateUI();  // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel date_txt6;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel main;
     private javax.swing.JPanel panel;
     private javax.swing.JLabel time_txt6;

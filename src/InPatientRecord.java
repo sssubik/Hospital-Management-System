@@ -47,9 +47,9 @@ public class InPatientRecord extends javax.swing.JPanel {
         //backup of original values to check
         originalTableModel = (Vector) ((DefaultTableModel) RecordTable.getModel()).getDataVector().clone();
         //add document listener to jtextfield to search contents as soon as something typed on it
-        addDocumentListener();
+       // addDocumentListener();
     }
-
+/*
     private void addDocumentListener() {
         documentListener = new DocumentListener() {
             public void changedUpdate(DocumentEvent documentEvent) {
@@ -88,7 +88,7 @@ public class InPatientRecord extends javax.swing.JPanel {
 
         }
     }
-    
+    */
     public void CurrentDate() {
 
         Thread clock = new Thread() {
@@ -163,27 +163,22 @@ public class InPatientRecord extends javax.swing.JPanel {
     private void initComponents() {
 
         panel = new javax.swing.JPanel();
-        ToDate = new com.toedter.calendar.JDateChooser();
-        FromDate = new com.toedter.calendar.JDateChooser();
         time_txt3 = new javax.swing.JLabel();
         date_txt3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         RecordTable = new javax.swing.JTable();
-        TextSearch = new javax.swing.JTextField();
-        ButtonSearch = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        FromDate = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
+        ToDate = new com.toedter.calendar.JDateChooser();
         ButtonSearch1 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
 
         panel.setLayout(null);
-        panel.add(ToDate);
-        ToDate.setBounds(520, 60, 150, 30);
-        panel.add(FromDate);
-        FromDate.setBounds(180, 60, 160, 30);
 
         time_txt3.setBackground(new java.awt.Color(255, 255, 255));
         time_txt3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -198,15 +193,6 @@ public class InPatientRecord extends javax.swing.JPanel {
         date_txt3.setText("Date");
         panel.add(date_txt3);
         date_txt3.setBounds(900, 20, 80, 20);
-
-        jButton1.setText("<<Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        panel.add(jButton1);
-        jButton1.setBounds(30, 10, 71, 23);
 
         RecordTable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         RecordTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -240,30 +226,27 @@ public class InPatientRecord extends javax.swing.JPanel {
         jScrollPane1.setViewportView(RecordTable);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 110, 840, 370);
-        panel.add(TextSearch);
-        TextSearch.setBounds(120, 10, 310, 30);
-
-        ButtonSearch.setText("Search");
-        ButtonSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSearchActionPerformed(evt);
-            }
-        });
-        panel.add(ButtonSearch);
-        ButtonSearch.setBounds(460, 10, 130, 30);
+        jScrollPane1.setBounds(90, 120, 810, 300);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("From:");
         panel.add(jLabel3);
-        jLabel3.setBounds(100, 60, 90, 30);
+        jLabel3.setBounds(100, 50, 90, 30);
+
+        FromDate.setDateFormatString("yyyy-MM-dd");
+        panel.add(FromDate);
+        FromDate.setBounds(160, 50, 220, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("To:");
         panel.add(jLabel4);
-        jLabel4.setBounds(460, 60, 60, 30);
+        jLabel4.setBounds(470, 50, 60, 30);
+
+        ToDate.setDateFormatString("yyyy-MM-dd");
+        panel.add(ToDate);
+        ToDate.setBounds(520, 50, 210, 30);
 
         ButtonSearch1.setText("Search");
         ButtonSearch1.addActionListener(new java.awt.event.ActionListener() {
@@ -272,7 +255,24 @@ public class InPatientRecord extends javax.swing.JPanel {
             }
         });
         panel.add(ButtonSearch1);
-        ButtonSearch1.setBounds(760, 60, 130, 40);
+        ButtonSearch1.setBounds(810, 50, 100, 30);
+
+        jButton7.setBackground(new java.awt.Color(204, 204, 204));
+        jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton7);
+        jButton7.setBounds(20, 10, 80, 27);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Inpatient Record");
+        panel.add(jLabel2);
+        jLabel2.setBounds(430, 10, 170, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -282,19 +282,23 @@ public class InPatientRecord extends javax.swing.JPanel {
         panel.setBounds(0, 0, 980, 600);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1, 2));
-        panel.add(new jpanel7());
-        panel.updateUI();
+    private void RecordTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RecordTableMouseReleased
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void RecordTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMousePressed
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_RecordTableMousePressed
 
-    private void ButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSearchActionPerformed
+    private void RecordTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RecordTableMouseEntered
+
+    private void RecordTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseClicked
         // TODO add your handling code here:
 
-        searchTableContents(TextSearch.getText());
-    }//GEN-LAST:event_ButtonSearchActionPerformed
+    }//GEN-LAST:event_RecordTableMouseClicked
 
     private void ButtonSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSearch1ActionPerformed
         // TODO add your handling code here:
@@ -307,22 +311,14 @@ public class InPatientRecord extends javax.swing.JPanel {
 
     }//GEN-LAST:event_ButtonSearch1ActionPerformed
 
-    private void RecordTableMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RecordTableMouseReleased
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel7());
+        panel.updateUI();
 
-    private void RecordTableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMousePressed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_RecordTableMousePressed
-
-    private void RecordTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RecordTableMouseEntered
-
-    private void RecordTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RecordTableMouseClicked
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     public int getTableClick() {
         return TableClick;
@@ -338,15 +334,14 @@ public class InPatientRecord extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ButtonSearch;
     private javax.swing.JButton ButtonSearch1;
     private com.toedter.calendar.JDateChooser FromDate;
     private javax.swing.JTable RecordTable;
-    private javax.swing.JTextField TextSearch;
     private com.toedter.calendar.JDateChooser ToDate;
     private javax.swing.JLabel date_txt3;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;

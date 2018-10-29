@@ -260,7 +260,7 @@ public void CurrentDate(){
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(130, 430, 560, 50);
+        Error.setBounds(670, 190, 220, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -327,7 +327,7 @@ public void CurrentDate(){
                 Error.setText("");
 
             } else {
-                Error.setText("Sorry Drug Not Found !!!!");
+                Error.setText("Sorry Drug Not Found");
                 TextName.setText("");
                 TextStock.setText("");
                 

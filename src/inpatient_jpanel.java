@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import static java.lang.Thread.sleep;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -194,7 +195,7 @@ public class inpatient_jpanel extends javax.swing.JPanel {
         panel.add(jLabel5);
         jLabel5.setBounds(620, 140, 30, 30);
         panel.add(TextAllergy);
-        TextAllergy.setBounds(240, 360, 460, 60);
+        TextAllergy.setBounds(240, 360, 380, 60);
 
         TextContactNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,7 +244,7 @@ public class inpatient_jpanel extends javax.swing.JPanel {
             }
         });
         panel.add(jButton1);
-        jButton1.setBounds(780, 390, 110, 30);
+        jButton1.setBounds(730, 400, 110, 30);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,7 +328,7 @@ public class inpatient_jpanel extends javax.swing.JPanel {
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(130, 440, 560, 40);
+        Error.setBounds(680, 360, 210, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -380,8 +381,12 @@ public class inpatient_jpanel extends javax.swing.JPanel {
         PatientService Ps = new PatientService();
         Ps.insert(this);
         Error.setText("");
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel2());
+        panel.updateUI();
          }
-
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

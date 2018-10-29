@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JasperCompileManager;
+/*import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -23,7 +23,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import static org.hsqldb.HsqlDateTime.e;
-
+*/
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -115,7 +115,6 @@ public class jpanel6 extends javax.swing.JPanel {
     private void initComponents() {
 
         panel = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
         time_txt5 = new javax.swing.JLabel();
         date_txt5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -143,21 +142,13 @@ public class jpanel6 extends javax.swing.JPanel {
         TextPatientName = new javax.swing.JTextField();
         TextDName = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         Main = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setLayout(null);
 
         panel.setLayout(null);
-
-        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton4.setText("<< Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        panel.add(jButton4);
-        jButton4.setBounds(20, 10, 80, 30);
 
         time_txt5.setBackground(new java.awt.Color(255, 255, 255));
         time_txt5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -173,17 +164,17 @@ public class jpanel6 extends javax.swing.JPanel {
         panel.add(date_txt5);
         date_txt5.setBounds(900, 20, 80, 20);
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("INVOICE");
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Invoice - ");
         panel.add(jLabel2);
-        jLabel2.setBounds(340, 0, 360, 40);
+        jLabel2.setBounds(210, 10, 100, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("HEALTH CENTRE MANAGEMENT SYSTEM");
         panel.add(jLabel3);
-        jLabel3.setBounds(250, 30, 520, 48);
+        jLabel3.setBounds(320, 8, 500, 40);
 
         TextPatientId.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,12 +199,13 @@ public class jpanel6 extends javax.swing.JPanel {
             }
         });
         panel.add(TextPatientId);
-        TextPatientId.setBounds(130, 80, 160, 30);
+        TextPatientId.setBounds(140, 80, 160, 30);
 
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("DoctorId:");
+        jLabel14.setText("DID:");
         panel.add(jLabel14);
-        jLabel14.setBounds(470, 90, 60, 14);
+        jLabel14.setBounds(500, 80, 40, 30);
 
         TextQty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,11 +215,13 @@ public class jpanel6 extends javax.swing.JPanel {
         panel.add(TextQty);
         TextQty.setBounds(550, 160, 51, 30);
 
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("QTY");
+        jLabel10.setText("Quantity:");
         panel.add(jLabel10);
-        jLabel10.setBounds(480, 150, 44, 41);
+        jLabel10.setBounds(470, 160, 70, 30);
 
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Doctor Name:");
         panel.add(jLabel11);
@@ -239,7 +233,7 @@ public class jpanel6 extends javax.swing.JPanel {
             }
         });
         panel.add(TextName);
-        TextName.setBounds(130, 160, 270, 30);
+        TextName.setBounds(140, 160, 270, 30);
 
         jButton2.setText("Add");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -248,7 +242,7 @@ public class jpanel6 extends javax.swing.JPanel {
             }
         });
         panel.add(jButton2);
-        jButton2.setBounds(280, 470, 130, 40);
+        jButton2.setBounds(650, 160, 90, 30);
 
         TextDid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,28 +252,29 @@ public class jpanel6 extends javax.swing.JPanel {
         panel.add(TextDid);
         TextDid.setBounds(550, 80, 140, 30);
 
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("NAME OF ITEM");
+        jLabel15.setText("Name of Item:");
         panel.add(jLabel15);
-        jLabel15.setBounds(20, 160, 118, 20);
+        jLabel15.setBounds(30, 160, 110, 30);
 
-        jButton6.setText("Set");
+        jButton6.setText("Calculate");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
         panel.add(jButton6);
-        jButton6.setBounds(430, 470, 150, 40);
+        jButton6.setBounds(290, 470, 100, 40);
 
-        jButton7.setText("Generate");
+        jButton7.setText("Generate Bill");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
         panel.add(jButton7);
-        jButton7.setBounds(610, 470, 140, 40);
+        jButton7.setBounds(620, 470, 140, 40);
 
         TextTotalWords.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -287,7 +282,7 @@ public class jpanel6 extends javax.swing.JPanel {
             }
         });
         panel.add(TextTotalWords);
-        TextTotalWords.setBounds(150, 520, 580, 65);
+        TextTotalWords.setBounds(150, 530, 600, 40);
         panel.add(TextTotal);
         TextTotal.setBounds(150, 470, 117, 40);
 
@@ -308,15 +303,15 @@ public class jpanel6 extends javax.swing.JPanel {
         jScrollPane2.setViewportView(TableInvoice);
 
         panel.add(jScrollPane2);
-        jScrollPane2.setBounds(50, 210, 755, 240);
+        jScrollPane2.setBounds(50, 210, 710, 240);
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("GRAND TOTAL:");
+        jLabel18.setText("Grand Total:");
         panel.add(jLabel18);
-        jLabel18.setBounds(20, 470, 140, 40);
+        jLabel18.setBounds(40, 470, 100, 40);
 
-        LabelError.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LabelError.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         LabelError.setForeground(new java.awt.Color(255, 0, 0));
         LabelError.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -324,27 +319,40 @@ public class jpanel6 extends javax.swing.JPanel {
             }
         });
         panel.add(LabelError);
-        LabelError.setBounds(130, 190, 530, 30);
+        LabelError.setBounds(150, 190, 260, 20);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("In Words:");
         panel.add(jLabel1);
-        jLabel1.setBounds(20, 524, 120, 50);
+        jLabel1.setBounds(40, 530, 90, 40);
 
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Patient Id:");
         panel.add(jLabel12);
-        jLabel12.setBounds(20, 80, 110, 34);
+        jLabel12.setBounds(30, 80, 110, 34);
         panel.add(TextPatientName);
-        TextPatientName.setBounds(130, 120, 270, 30);
+        TextPatientName.setBounds(140, 120, 270, 30);
         panel.add(TextDName);
         TextDName.setBounds(550, 120, 190, 30);
 
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Patient Name:");
         panel.add(jLabel13);
-        jLabel13.setBounds(20, 120, 110, 34);
+        jLabel13.setBounds(30, 120, 110, 34);
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton4);
+        jButton4.setBounds(20, 10, 80, 27);
 
         Main.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InvoiceBackground.jpg"))); // NOI18N
         panel.add(Main);
@@ -352,14 +360,18 @@ public class jpanel6 extends javax.swing.JPanel {
 
         add(panel);
         panel.setBounds(0, 0, 980, 600);
-    }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1, 2));
-        panel.add(new jpanel1());
-        panel.updateUI();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
+        jButton5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        add(jButton5);
+        jButton5.setBounds(20, 10, 80, 27);
+    }// </editor-fold>//GEN-END:initComponents
 
     private void TextQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextQtyActionPerformed
         // TODO add your handling code here:
@@ -382,7 +394,7 @@ public class jpanel6 extends javax.swing.JPanel {
         ResultSet Rs = Rc.checkDrug(TextName.getText());
         try {
             if (!Rs.next()) {
-                LabelError.setText("Not In Stock!!!");
+                LabelError.setText("Not In Stock");
 
             } else {
                 //LabelError.setText("");
@@ -402,7 +414,7 @@ public class jpanel6 extends javax.swing.JPanel {
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, e);
+//            JOptionPane.showMessageDialog(null, e);
 
         }
         // TextName.setText(null);
@@ -412,10 +424,10 @@ public class jpanel6 extends javax.swing.JPanel {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-      DefaultTableModel model = (DefaultTableModel) TableInvoice.getModel();
+        DefaultTableModel model = (DefaultTableModel) TableInvoice.getModel();
         RepositoryClass Rc = new RepositoryClass();
       
-        Rc.DeleteBill();
+
         int j = 1;
         int sum = 0;
 
@@ -451,42 +463,59 @@ public class jpanel6 extends javax.swing.JPanel {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         RepositoryClass Rc = new RepositoryClass();
-          String DName;
+        Rc.DeleteBill();
+        String DName;
         int Quantity;
         int Sn = 1;
-         DefaultTableModel model = (DefaultTableModel) TableInvoice.getModel();
-        //Rc.DeleteBill();   
-         for (int i = 0; i < model.getRowCount(); i++) {
+        DefaultTableModel model = (DefaultTableModel) TableInvoice.getModel();
+        ResultSet rs = Rc.InBillStore(total);
+         int BillId = 0;
+        
+         try{   
+             if(rs.next())
+             {
+                BillId = Integer.parseInt(rs.getString("BillId"));
+             }
+         }
+         catch(Exception e)
+         {
+             JOptionPane.showMessageDialog(null, e);
+         }
+        for (int i = 0; i < model.getRowCount(); i++) {
             DName = model.getValueAt(i, 1).toString();
             Quantity = Integer.parseInt(model.getValueAt(i, 2).toString());
             Rc.decStock(DName, Quantity);
-            //Rc.InBillDrug(Sn, DName, Quantity);
-           // Rc.drugPatient(TextPatientId.getText(),DName,Quantity,date,BillId);
+            Rc.InBillDrug(Sn, DName, Quantity);
+            Rc.drugPatient(TextPatientId.getText(),DName,Quantity,date,BillId);
             Sn = Sn+1;
           
         }
        
+        String D = TextDid.getText();
+        
         Map parameters = new HashMap();
         parameters.put("Total", TextTotal.getText());
-        parameters.put("TotalWord",TextTotalWords.getText());
-        parameters.put("CustomerName",TextPatientName.getText());
-        parameters.put("DoctorName",TextDName.getText());
+        
+        parameters.put("TotalWords", TextTotalWords.getText());
+        parameters.put("PatientName", TextPatientName.getText());
+         parameters.put("DoctorName", TextDName.getText());
         try {
             //String report = "C:\\ProgrammingJava\\StandardFormatExample\\MainReport.jrxml";
 
-            JasperDesign jd = JRXmlLoader.load("C:\\Users\\Subik\\Documents\\NetBeansProjects\\BillingSystem\\BillReport.jrxml");
-            String sql = "select * from bill ";
+/*            JasperDesign jd = JRXmlLoader.load("C:\\ProgrammingJava\\StandardFormatExample\\Bill.jrxml");
+            String sql = "select distinct SN,DrugName,Cost,No,TotalCost from bill ";
             JRDesignQuery newQuery = new JRDesignQuery();
             newQuery.setText(sql);
             jd.setQuery(newQuery);
             JasperReport jr = JasperCompileManager.compileReport(jd);
             JasperPrint jp = JasperFillManager.fillReport(jr, parameters, javaConnect.ConnecrDb());
             JasperViewer.viewReport(jp, false);
-
+*/
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
 
         }
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void TextDidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextDidActionPerformed
@@ -558,6 +587,24 @@ public class jpanel6 extends javax.swing.JPanel {
         
     }//GEN-LAST:event_TextPatientIdActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel1());
+        panel.updateUI();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel1());
+        panel.updateUI();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelError;
@@ -574,6 +621,7 @@ public class jpanel6 extends javax.swing.JPanel {
     private javax.swing.JLabel date_txt5;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;

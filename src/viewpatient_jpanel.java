@@ -290,7 +290,7 @@ public class viewpatient_jpanel extends javax.swing.JPanel {
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(130, 424, 600, 60);
+        Error.setBounds(300, 50, 450, 30);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
@@ -351,7 +351,7 @@ public class viewpatient_jpanel extends javax.swing.JPanel {
                 Error.setText("");
 
             } else {
-                Error.setText("Sorry Patient Not Found !!!!");
+                Error.setText("Sorry Patient Not Found");
 
                 TextName.setText("");
 

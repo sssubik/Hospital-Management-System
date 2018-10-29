@@ -124,12 +124,12 @@ public void CurrentDate(){
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         time_txt3 = new javax.swing.JLabel();
         date_txt3 = new javax.swing.JLabel();
         LabelExpiry = new javax.swing.JLabel();
         StockAlert = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -163,16 +163,6 @@ public void CurrentDate(){
         panel.add(jButton3);
         jButton3.setBounds(640, 210, 230, 100);
 
-        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jButton4.setText("<< Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        panel.add(jButton4);
-        jButton4.setBounds(20, 10, 80, 30);
-
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Medicine");
@@ -193,7 +183,7 @@ public void CurrentDate(){
         panel.add(date_txt3);
         date_txt3.setBounds(900, 20, 80, 20);
 
-        LabelExpiry.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        LabelExpiry.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         LabelExpiry.setForeground(new java.awt.Color(255, 0, 0));
         LabelExpiry.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -201,9 +191,9 @@ public void CurrentDate(){
             }
         });
         panel.add(LabelExpiry);
-        LabelExpiry.setBounds(130, 390, 380, 90);
+        LabelExpiry.setBounds(110, 390, 270, 40);
 
-        StockAlert.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        StockAlert.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         StockAlert.setForeground(new java.awt.Color(255, 0, 0));
         StockAlert.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -211,7 +201,18 @@ public void CurrentDate(){
             }
         });
         panel.add(StockAlert);
-        StockAlert.setBounds(480, 380, 370, 100);
+        StockAlert.setBounds(720, 390, 180, 40);
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton4);
+        jButton4.setBounds(20, 10, 80, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -220,13 +221,6 @@ public void CurrentDate(){
         add(panel);
         panel.setBounds(0, 0, 980, 600);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
- panel.removeAll();
- panel.setLayout(new GridLayout(1,2));
- panel.add(new jpanel1());
- panel.updateUI();        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -278,6 +272,15 @@ public void CurrentDate(){
         
         
     }//GEN-LAST:event_StockAlertMouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel1());
+        panel.updateUI();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     public JLabel getLabelExpiry() {
         return LabelExpiry;

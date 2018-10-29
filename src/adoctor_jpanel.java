@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import java.awt.GridLayout;
 import java.sql.ResultSet;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /*
@@ -295,7 +296,7 @@ public class adoctor_jpanel extends javax.swing.JPanel {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Out Time:");
         panel.add(jLabel13);
-        jLabel13.setBounds(560, 280, 70, 30);
+        jLabel13.setBounds(560, 240, 70, 30);
 
         jButton7.setBackground(new java.awt.Color(204, 204, 204));
         jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -317,7 +318,7 @@ public class adoctor_jpanel extends javax.swing.JPanel {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("In Time:");
         panel.add(jLabel14);
-        jLabel14.setBounds(560, 240, 60, 30);
+        jLabel14.setBounds(560, 190, 60, 30);
 
         CheckWed.setForeground(new java.awt.Color(255, 255, 255));
         CheckWed.setText("Wednesday");
@@ -387,31 +388,31 @@ public class adoctor_jpanel extends javax.swing.JPanel {
 
         Ohour.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         panel.add(Ohour);
-        Ohour.setBounds(637, 280, 50, 30);
+        Ohour.setBounds(640, 240, 50, 30);
 
         OSec.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01 ", "02", "03", "04", "05", "06", "07", "08 ", "09 ", "10 ", "11 ", "12 ", "13 ", "14 ", "15 ", "16 ", "17 ", "18 ", "19 ", "20 ", "21 ", "22 ", "23 ", "24 ", "25 ", "26 ", "27 ", "28 ", "29 ", "30 ", "31 ", "32 ", "33 ", "34 ", "35 ", "36 ", "37 ", "38 ", "39 ", "40 ", "41 ", "42 ", "43 ", "44 ", "45 ", "46 ", "47 ", "48 ", "49 ", "50 ", "51 ", "52 ", "53 ", "54 ", "55 ", "56 ", "57 ", "58 ", "59 " }));
         panel.add(OSec);
-        OSec.setBounds(710, 280, 50, 30);
+        OSec.setBounds(710, 240, 50, 30);
 
         O.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AM", "PM" }));
         panel.add(O);
-        O.setBounds(780, 280, 56, 30);
+        O.setBounds(780, 240, 56, 30);
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText(" :");
         panel.add(jLabel7);
-        jLabel7.setBounds(690, 280, 20, 30);
+        jLabel7.setBounds(690, 190, 20, 30);
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText(" :");
         panel.add(jLabel11);
-        jLabel11.setBounds(760, 280, 20, 30);
+        jLabel11.setBounds(760, 190, 20, 30);
 
         Ihour.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         panel.add(Ihour);
-        Ihour.setBounds(640, 240, 50, 30);
+        Ihour.setBounds(640, 190, 50, 30);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -421,7 +422,7 @@ public class adoctor_jpanel extends javax.swing.JPanel {
 
         ISec.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01 ", "02", "03", "04", "05", "06", "07", "08 ", "09 ", "10 ", "11 ", "12 ", "13 ", "14 ", "15 ", "16 ", "17 ", "18 ", "19 ", "20 ", "21 ", "22 ", "23 ", "24 ", "25 ", "26 ", "27 ", "28 ", "29 ", "30 ", "31 ", "32 ", "33 ", "34 ", "35 ", "36 ", "37 ", "38 ", "39 ", "40 ", "41 ", "42 ", "43 ", "44 ", "45 ", "46 ", "47 ", "48 ", "49 ", "50 ", "51 ", "52 ", "53 ", "54 ", "55 ", "56 ", "57 ", "58 ", "59 " }));
         panel.add(ISec);
-        ISec.setBounds(710, 240, 50, 30);
+        ISec.setBounds(710, 190, 50, 30);
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -431,7 +432,7 @@ public class adoctor_jpanel extends javax.swing.JPanel {
 
         I.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "AM", "PM" }));
         panel.add(I);
-        I.setBounds(780, 240, 56, 30);
+        I.setBounds(780, 190, 56, 30);
 
         CheckTues.setForeground(new java.awt.Color(255, 255, 255));
         CheckTues.setText("Tuesday");
@@ -447,9 +448,9 @@ public class adoctor_jpanel extends javax.swing.JPanel {
         Error.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Error.setForeground(new java.awt.Color(255, 0, 0));
         panel.add(Error);
-        Error.setBounds(130, 420, 560, 50);
+        Error.setBounds(600, 300, 270, 40);
 
-        TextAge.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", " " }));
+        TextAge.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", " " }));
         TextAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextAgeActionPerformed(evt);
@@ -518,14 +519,17 @@ public class adoctor_jpanel extends javax.swing.JPanel {
         } 
          else {
             setTime();
-            
             DoctorService Dc = new DoctorService();
             Dc.insert(this);
             Error.setText("");
-            
+            panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel3());
+        panel.updateUI();
         }
-      setDay();
-       
+      
+        setDay();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -37,7 +37,7 @@ public class RepositoryClass {
             rs = pst.executeQuery();
             if (rs.next()) {
                 int cost = Integer.parseInt(rs.getString("Cost"));
-                sql = "insert into demo.Bill(SN,ItemName,No,Cost) value(?,?,?,?)";
+                sql = "insert into demo.Bill(SN,DrugName,No,Cost) value(?,?,?,?)";
                 pst = conn.prepareStatement(sql);
                 pst.setInt(1, S);
                 pst.setString(2, D);
@@ -239,7 +239,7 @@ public class RepositoryClass {
             pst.setString(5, A.getPName());
             pst.execute();
 
-            sql = "update appointment set slot = ((select select_value from (select max(slot) as select_value from appointment where DoctorName = '"+A.getDoctorName()+"' and DateAppointment = '"+A.getDateAppointment()+"') as sub_select_value) + 1)  where PatientName = '"+A.getPName()+"' ";
+            sql = "update appointment set slot = ((select select_value from (select max(slot) as select_value from appointment where DoctorName = '" + A.getDoctorName() + "' and DateAppointment = '" + A.getDateAppointment() + "') as sub_select_value) + 1)  where PatientName = '" + A.getPName() + "' ";
 
             pst = conn.prepareStatement(sql);
             pst.execute();
@@ -597,8 +597,8 @@ public class RepositoryClass {
             return null;
         }
     }
-    public ResultSet returnDiseases()
-    {
+
+    public ResultSet returnDiseases() {
         try {
             String sql = "select DiseaseName from diseases";
             pst = conn.prepareStatement(sql);
@@ -609,9 +609,9 @@ public class RepositoryClass {
             return null;
         }
     }
-    public ResultSet returnInpatientRecord()
-    {
-         try {
+
+    public ResultSet returnInpatientRecord() {
+        try {
             String sql = "select Name,Age,DateOfAdmission,Sex,FContactNo,DrugsAllergy from inpatient";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -621,10 +621,22 @@ public class RepositoryClass {
             return null;
         }
     }
-    public ResultSet viewInPatientFromTo(String FromDate,String ToDate)
-    {
+
+    public ResultSet returnOutpatientRecord() {
         try {
-          String sql = "select Name,Age,DateOfAdmission,Sex,FContactNo,DrugsAllergy from inpatient\n"
+            String sql = "select  OpNo,Name,Age,DateOfDischarge from outpatient";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            return rs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+
+    public ResultSet viewInPatientFromTo(String FromDate, String ToDate) {
+        try {
+            String sql = "select Name,Age,DateOfAdmission,Sex,FContactNo,DrugsAllergy from inpatient\n"
                     + "WHERE DateOfAdmission >= '" + FromDate + "'"
                     + "AND DateOfAdmission <= '" + ToDate + "'";
             pst = conn.prepareStatement(sql);
@@ -635,10 +647,23 @@ public class RepositoryClass {
             return null;
         }
     }
-    
-    public ResultSet returnMaxDid()
-    {
-         try {
+
+    public ResultSet viewOutPatientFromTo(String FromDate, String ToDate) {
+        try {
+            String sql = "select OpNo,Name,Age,DateOfDischarge from outpatient\n"
+                    + "WHERE DateOfDischarge >= '" + FromDate + "'"
+                    + "AND DateOfDischarge <= '" + ToDate + "'";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            return rs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+
+    public ResultSet returnMaxDid() {
+        try {
             String sql = "select max(Did) as Did from doctor";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -648,14 +673,13 @@ public class RepositoryClass {
             return null;
         }
     }
-    public void insertDiseasePatient(int opno,String Name)
-    {
-        try{
+
+    public void insertDiseasePatient(int opno, String Name) {
+        try {
             String sql = "Insert into demo.patientdisease (Opno,DiseaseName) value(?,?)";
             pst = conn.prepareStatement(sql);
             pst.setInt(1, opno);
             pst.setString(2, Name);
-          
 
             pst.execute();
             JOptionPane.showMessageDialog(null, "Saved");
@@ -663,6 +687,37 @@ public class RepositoryClass {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
 
+        }
+    }
+
+    public ResultSet returnDiseasePatientRecord(int i) {
+        try {
+            String sql = "select DiseaseName from patientdisease where Opno = '" + i + "'";
+
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            return rs;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+
+    public ResultSet returnTopDisease() {
+        {
+            try {
+                String sql = "select DiseaseName,count(DiseaseName) from patientdisease\n"
+                        + "group by DiseaseName\n"
+                        + "order by count(DiseaseName) desc\n"
+                        + "limit 15";
+
+                pst = conn.prepareStatement(sql);
+                rs = pst.executeQuery();
+                return rs;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+                return null;
+            }
         }
     }
 }

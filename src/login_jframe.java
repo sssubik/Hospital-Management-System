@@ -128,8 +128,8 @@ public class login_jframe extends javax.swing.JFrame {
         panel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TextPassword = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
         LabelError = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
 
@@ -140,7 +140,7 @@ public class login_jframe extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("UserName:");
+        jLabel2.setText("Username:");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(420, 250, 90, 30);
 
@@ -198,15 +198,15 @@ public class login_jframe extends javax.swing.JFrame {
         getContentPane().add(TextPassword);
         TextPassword.setBounds(550, 300, 150, 30);
 
+        LabelError.setFont(new java.awt.Font("Calibri Light", 0, 12)); // NOI18N
+        LabelError.setForeground(new java.awt.Color(255, 0, 0));
+        getContentPane().add(LabelError);
+        LabelError.setBounds(420, 340, 200, 30);
+
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/22opaque.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(360, 220, 380, 170);
-
-        LabelError.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        LabelError.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(LabelError);
-        LabelError.setBounds(370, 430, 370, 30);
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img1.jpg"))); // NOI18N
@@ -227,20 +227,20 @@ public class login_jframe extends javax.swing.JFrame {
         ResultSet rs = Ls.login(this);
        try{
         if (rs.next()) {
-            
+      
             this.dispose();
             new home_jframe().setVisible(true);
             
-               
+           
         } else {
-            LabelError.setText("Incorrect Password Or UserName");
+            LabelError.setText("Incorrect Username or Password");
         }
        }
        catch (Exception e)
        {
               JOptionPane.showMessageDialog(null, e);
        }
-     
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public JPasswordField getTextPassword() {

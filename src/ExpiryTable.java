@@ -105,8 +105,8 @@ public class ExpiryTable extends javax.swing.JPanel {
         date_txt3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableExpiry = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(null);
@@ -146,16 +146,7 @@ public class ExpiryTable extends javax.swing.JPanel {
         jScrollPane1.setViewportView(TableExpiry);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 70, 860, 370);
-
-        jButton1.setText("<<Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        panel.add(jButton1);
-        jButton1.setBounds(40, 10, 71, 23);
+        jScrollPane1.setBounds(100, 120, 790, 290);
 
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +155,18 @@ public class ExpiryTable extends javax.swing.JPanel {
             }
         });
         panel.add(jButton2);
-        jButton2.setBounds(80, 450, 130, 30);
+        jButton2.setBounds(780, 60, 130, 30);
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jButton4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton4);
+        jButton4.setBounds(20, 10, 80, 27);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);
@@ -174,7 +176,15 @@ public class ExpiryTable extends javax.swing.JPanel {
         panel.setBounds(0, 0, 980, 600);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new umedicine_jpanel());
+        panel.updateUI();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         panel.removeAll();
         panel.setLayout(new GridLayout(1, 2));
         ExpiryAlert Ea = new ExpiryAlert();
@@ -191,23 +201,15 @@ public class ExpiryTable extends javax.swing.JPanel {
 
         panel.add(j);
         panel.updateUI();
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1, 2));
-        panel.add(new umedicine_jpanel());
-        panel.updateUI();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TableExpiry;
     private javax.swing.JLabel date_txt3;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel;

@@ -185,7 +185,7 @@ public class RecordDrugFromTo extends javax.swing.JPanel {
         jScrollPane1.setViewportView(RecordTable);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 100, 830, 330);
+        jScrollPane1.setBounds(100, 130, 790, 290);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));

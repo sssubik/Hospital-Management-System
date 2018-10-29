@@ -356,7 +356,7 @@ public void CurrentDate(){
             }
         });
         panel.add(jButton2);
-        jButton2.setBounds(240, 430, 270, 50);
+        jButton2.setBounds(770, 350, 130, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(jLabel1);

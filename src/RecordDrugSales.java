@@ -133,7 +133,6 @@ public class RecordDrugSales extends javax.swing.JPanel {
         panel = new javax.swing.JPanel();
         time_txt3 = new javax.swing.JLabel();
         date_txt3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         FromDate = new com.toedter.calendar.JDateChooser();
         ToDate = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -143,6 +142,7 @@ public class RecordDrugSales extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         ButtonSearch = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         mian = new javax.swing.JLabel();
 
         setLayout(null);
@@ -163,22 +163,13 @@ public class RecordDrugSales extends javax.swing.JPanel {
         panel.add(date_txt3);
         date_txt3.setBounds(900, 20, 80, 20);
 
-        jButton1.setText("<<Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        panel.add(jButton1);
-        jButton1.setBounds(30, 10, 71, 23);
-
         FromDate.setDateFormatString("yyyy-MM-dd");
         panel.add(FromDate);
-        FromDate.setBounds(170, 60, 220, 40);
+        FromDate.setBounds(160, 50, 220, 30);
 
         ToDate.setDateFormatString("yyyy-MM-dd");
         panel.add(ToDate);
-        ToDate.setBounds(520, 60, 210, 40);
+        ToDate.setBounds(500, 50, 210, 30);
 
         RecordTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -194,31 +185,31 @@ public class RecordDrugSales extends javax.swing.JPanel {
         jScrollPane1.setViewportView(RecordTable);
 
         panel.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 150, 830, 280);
+        jScrollPane1.setBounds(100, 150, 780, 270);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Top 15 Drugs Sold:");
         panel.add(jLabel2);
-        jLabel2.setBounds(80, 110, 380, 30);
+        jLabel2.setBounds(80, 110, 150, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("From:");
         panel.add(jLabel3);
-        jLabel3.setBounds(100, 60, 90, 30);
+        jLabel3.setBounds(100, 50, 60, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("To:");
         panel.add(jLabel4);
-        jLabel4.setBounds(460, 60, 60, 30);
+        jLabel4.setBounds(460, 50, 60, 30);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Drug Record:");
+        jLabel5.setText("Drug Record");
         panel.add(jLabel5);
-        jLabel5.setBounds(340, 10, 380, 30);
+        jLabel5.setBounds(420, 0, 110, 40);
 
         ButtonSearch.setText("Search");
         ButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -227,7 +218,18 @@ public class RecordDrugSales extends javax.swing.JPanel {
             }
         });
         panel.add(ButtonSearch);
-        ButtonSearch.setBounds(760, 50, 130, 50);
+        ButtonSearch.setBounds(760, 50, 100, 30);
+
+        jButton7.setBackground(new java.awt.Color(204, 204, 204));
+        jButton7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backbutton2.jpg"))); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        panel.add(jButton7);
+        jButton7.setBounds(20, 10, 80, 27);
 
         mian.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.jpg"))); // NOI18N
         panel.add(mian);
@@ -236,15 +238,6 @@ public class RecordDrugSales extends javax.swing.JPanel {
         add(panel);
         panel.setBounds(0, 0, 980, 600);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1, 2));
-        panel.add(new jpanel7());
-        panel.updateUI();
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void RecordTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecordTableMouseClicked
        
@@ -263,12 +256,18 @@ public class RecordDrugSales extends javax.swing.JPanel {
         // TODO add your handling code here:    
         RecordDrugFromTo Rd = new RecordDrugFromTo();
         Rd.setDate(this);
-        panel.removeAll();
-        panel.setLayout(new GridLayout(1, 2));
-        panel.add(Rd);
-        panel.updateUI();
+        
         
     }//GEN-LAST:event_ButtonSearchActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+      panel.removeAll();
+        panel.setLayout(new GridLayout(1, 2));
+        panel.add(new jpanel7());
+        panel.updateUI();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     public JDateChooser getFromDate() {
         return FromDate;
@@ -285,7 +284,7 @@ public class RecordDrugSales extends javax.swing.JPanel {
     private javax.swing.JTable RecordTable;
     private com.toedter.calendar.JDateChooser ToDate;
     private javax.swing.JLabel date_txt3;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

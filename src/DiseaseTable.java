@@ -30,8 +30,10 @@ public class DiseaseTable extends javax.swing.JFrame {
      * Creates new form DiseaseTableJframe
      */
     public DiseaseTable() {
+        setTitle("Disease Table - HCMS");
         initComponents();
         updateTable();
+        setIcon();
         setLocationRelativeTo(null);
         //backup of original values to check
         originalTableModel = (Vector) ((DefaultTableModel) RecordTable.getModel()).getDataVector().clone();
@@ -56,9 +58,17 @@ public class DiseaseTable extends javax.swing.JFrame {
         ButtonSearch = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(710, 530));
+        setMinimumSize(new java.awt.Dimension(710, 530));
+        setPreferredSize(new java.awt.Dimension(710, 530));
+        setResizable(false);
+        setSize(new java.awt.Dimension(710, 530));
+        getContentPane().setLayout(null);
 
+        RecordTable.setAutoCreateRowSorter(true);
         RecordTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -75,6 +85,9 @@ public class DiseaseTable extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        RecordTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        RecordTable.setDragEnabled(true);
+        RecordTable.setRowMargin(2);
         RecordTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 RecordTableMouseClicked(evt);
@@ -87,12 +100,21 @@ public class DiseaseTable extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(RecordTable);
+        if (RecordTable.getColumnModel().getColumnCount() > 0) {
+            RecordTable.getColumnModel().getColumn(0).setPreferredWidth(50);
+            RecordTable.getColumnModel().getColumn(1).setPreferredWidth(575);
+        }
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(30, 100, 646, 352);
 
         TextSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(TextSearch);
+        TextSearch.setBounds(32, 50, 472, 30);
 
         ButtonSearch.setText("Search");
         ButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +122,8 @@ public class DiseaseTable extends javax.swing.JFrame {
                 ButtonSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(ButtonSearch);
+        ButtonSearch.setBounds(548, 50, 130, 30);
 
         jButton2.setText("Submit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -107,47 +131,18 @@ public class DiseaseTable extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(588, 456, 90, 23);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Diseases:");
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Diseases");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(32, 21, 58, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(360, 360, 360)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(TextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 956, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dback.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 710, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,7 +255,7 @@ public class DiseaseTable extends javax.swing.JFrame {
             } else {
                 //System.out.println(Col);
                 Rc.insertDiseasePatient(i,Col);
-                Name = Name + ", " + Col;
+                Name = Name + "   " + Col;
 
             }
         }
@@ -323,7 +318,11 @@ public class DiseaseTable extends javax.swing.JFrame {
     private javax.swing.JTable RecordTable;
     private javax.swing.JTextField TextSearch;
     private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("LOGO0.jpg")));
+    }
 }

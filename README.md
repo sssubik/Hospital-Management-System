@@ -9,3 +9,6 @@ Second you need to import all the libaries in the repo to the project.
 Finally you need to setup your Ireport locally or you can just comment the codes out
 
 And then you are able to run the project.
+
+
+The project consist of Appointment, Billing System and report generation implemented using logics by query

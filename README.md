@@ -11,4 +11,4 @@ Finally you need to setup your Ireport locally or you can just comment the codes
 And then you are able to run the project.
 
 
-The project consist of Appointment, Billing System and report generation implemented using logics by query
+The project consist of keeping records of Doctor, Patients and make Appointment, Billing System and report generation implemented using logics by query. 
